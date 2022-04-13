@@ -24,10 +24,5 @@ jobs:
       - name: Vet backend
         run: go vet --all .
 
-      - name: Lint backend
-        uses: golangci/golangci-lint-action@v2
-        with:
-          skip-go-installation: true
-
       - name: Test backend
         run: go test -v -race .
