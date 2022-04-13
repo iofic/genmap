@@ -2,6 +2,8 @@
 
 [![Build](https://github.com/iofic/genmap/actions/workflows/build.yml/badge.svg)](https://github.com/iofic/genmap/actions/workflows/build.yml)
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/iofic/genmap.svg)](https://pkg.go.dev/github.com/iofic/genmap)
+
 # GenMap
 GenMap provides a generic map, able to store any type, and retrieve values with type safety.
 
