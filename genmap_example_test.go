@@ -6,7 +6,7 @@ import (
 	"github.com/iofic/genmap"
 )
 
-func ExampleMap() {
+func Example() {
 	// This example uses the 'string' version of map and keys. This allows the calling code to worry less about key and
 	// map types, and only specify value store and load types.
 
