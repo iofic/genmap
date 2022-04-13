@@ -1,4 +1,4 @@
-name: Build
+name: build
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  vet-test-core:
+  vet-and-test:
     runs-on: ubuntu-latest
 
     strategy:
