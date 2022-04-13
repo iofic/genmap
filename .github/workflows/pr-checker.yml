@@ -1,0 +1,33 @@
+name: PR pr-checker
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  vet-test-core:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        go-version: [1.18]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Vet backend
+        run: go vet --all .
+
+      - name: Lint backend
+        uses: golangci/golangci-lint-action@v2
+        with:
+          skip-go-installation: true
+
+      - name: Test backend
+        run: go test -v -race .
