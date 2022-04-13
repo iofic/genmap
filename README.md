@@ -1,3 +1,5 @@
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 # GenMap
 GenMap provides a generic map, able to store any type, and retrieve values with type safety.
 
