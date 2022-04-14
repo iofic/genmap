@@ -1,5 +1,5 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![Build](https://github.com/iofic/genmap/actions/workflows/build.yml/badge.svg)](https://github.com/iofic/genmap/actions/workflows/build.yml)
+[![Build](https://github.com/iofic/genmap/actions/workflows/build.yaml/badge.svg)](https://github.com/iofic/genmap/actions/workflows/build.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/iofic/genmap.svg)](https://pkg.go.dev/github.com/iofic/genmap)
 
 # GenMap
