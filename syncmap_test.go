@@ -80,3 +80,36 @@ func TestLoadOrStore(t *testing.T) {
 		t.Errorf("LoadOrStore = %v %t, want %v %t", got1, loaded1, val1, true)
 	}
 }
+
+func FuzzSyncMap(f *testing.F) {
+	keys := []struct {
+		key    string
+		key1   string
+		value  int
+		value1 int
+	}{
+		{
+			key:    "a",
+			key1:   "b",
+			value:  1,
+			value1: 2,
+		},
+	}
+
+	m := genmap.NewSyncMap()
+
+	for _, k := range keys {
+		f.Add(k.key, k.key1, k.value, k.value1)
+	}
+
+	f.Fuzz(func(t *testing.T, key, key1 string, value, value1 int) {
+		ik := genmap.NewStringKey[int](key)
+		ik1 := genmap.NewStringKey[int](key1)
+
+		genmap.StoreSync[int, string](m, ik, value)
+		_, _ = genmap.LoadSync[int, string](m, ik)
+		_, _ = genmap.LoadOrStore[int, string](m, ik1, value1)
+		_, _ = genmap.LoadAndDelete[int, string](m, ik)
+		genmap.DeleteSync[int, string](m, ik1)
+	})
+}
