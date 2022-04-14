@@ -35,3 +35,27 @@ func TestMap(t *testing.T) {
 		t.Errorf("Load() = %v %t, want %v %t", v, ok, 0, false)
 	}
 }
+
+func FuzzMap(f *testing.F) {
+	keys := []struct {
+		key   string
+		value int
+	}{
+		{
+			key:   "a",
+			value: 1,
+		},
+	}
+
+	m := genmap.NewStringMap()
+
+	for _, k := range keys {
+		f.Add(k.key, k.value)
+	}
+
+	f.Fuzz(func(t *testing.T, key string, value int) {
+		ik := genmap.NewStringKey[int](key)
+		genmap.StoreS(m, ik, value)
+		_, _ = genmap.LoadS(m, ik)
+	})
+}
