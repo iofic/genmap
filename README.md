@@ -1,6 +1,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![Build](https://github.com/iofic/genmap/workflows/build/badge.svg)](https://github.com/iofic/genmap/actions/workflows/build.yaml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/iofic/genmap.svg)](https://pkg.go.dev/github.com/iofic/genmap)
+[![codecov](https://codecov.io/gh/iofic/genmap/branch/main/graph/badge.svg?token=VFQRFY8ER5)](https://codecov.io/gh/iofic/genmap)
 
 # GenMap
 GenMap provides a generic map, able to store any type, and retrieve values with type safety.
